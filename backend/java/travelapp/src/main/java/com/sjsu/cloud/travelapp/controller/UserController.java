@@ -12,7 +12,6 @@ import java.util.List;
 
 @Controller 
 @RequestMapping(path="/user")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UserController {
 	@Autowired
 	private UserService userService;
@@ -42,7 +41,7 @@ public class UserController {
 		return userService.getAllUsers();
 	}
 
-	@PostMapping(path="/getUser")
+	@GetMapping(path="/getUser")
 	public ResponseEntity<?> getUser (@RequestBody User user) {
 		return userService.getUser(user);
 	}
